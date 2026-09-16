@@ -6,7 +6,6 @@ from typing import Any
 
 import pandas as pd
 
-from config.gacha_rules import POOL_RULES
 from src.pity import current_pool_state
 
 
@@ -18,7 +17,6 @@ def analyze_pool(frame: pd.DataFrame, pool_type: str) -> dict[str, Any]:
     pool = frame[frame["pool_type"].eq(pool_type)]
     five = pool[pool["is_five_star"]]
     state = current_pool_state(frame, pool_type)
-    rule = POOL_RULES.get(pool_type, POOL_RULES["unknown"])
 
     small_wins = int(five["five_star_result_type"].eq("up").sum())
     small_losses = int(five["five_star_result_type"].eq("off_banner").sum())
@@ -40,11 +38,6 @@ def analyze_pool(frame: pd.DataFrame, pool_type: str) -> dict[str, Any]:
         "small_pity_win_rate": _safe_rate(small_wins, small_wins + small_losses),
         "current_pity": state["current_pity"],
         "guaranteed_next": state["guaranteed_next"],
-        "next_featured_rate": (
-            1.0 if state["guaranteed_next"] else rule.featured_rate
-        ),
-        "hard_pity": rule.hard_pity,
-        "remaining_to_hard_pity": max(0, rule.hard_pity - state["current_pity"]),
         "has_history": state["has_history"],
     }
 
@@ -77,4 +70,3 @@ def analyze_account(frame: pd.DataFrame) -> dict[str, Any]:
         ),
         "pools": pools,
     }
-

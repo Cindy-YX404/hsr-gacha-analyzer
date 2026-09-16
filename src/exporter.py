@@ -60,7 +60,7 @@ def _summary_rows(summary: dict[str, Any]) -> list[tuple[str, Any]]:
         ("Total Pulls", summary["total_pulls"]),
         ("Five Stars", summary["five_stars"]),
         ("Average Pity", summary["average_pity"]),
-        ("Character 50/50 Win Rate", character["small_pity_win_rate"]),
+        ("Character Non-guaranteed UP Success Rate", character["small_pity_win_rate"]),
         ("Character Off-banner Count", character["off_banner_count"]),
         ("Light Cone Featured Win Rate", lightcone["small_pity_win_rate"]),
         ("Current Character Pity", character["current_pity"]),
@@ -110,4 +110,3 @@ def to_excel_bytes(frame: pd.DataFrame, summary: dict[str, Any]) -> bytes:
 
     buffer.seek(0)
     return buffer.getvalue()
-

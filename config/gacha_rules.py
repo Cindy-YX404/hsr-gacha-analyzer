@@ -9,14 +9,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 
-CHARACTER_HARD_PITY = 90
-LIGHTCONE_HARD_PITY = 80
-STANDARD_HARD_PITY = 90
-BEGINNER_HARD_PITY = 50
-
-CHARACTER_FEATURED_RATE = 0.50
-LIGHTCONE_FEATURED_RATE = 0.75
-
 DEFAULT_PAGE_SIZE = 20
 REQUEST_DELAY_SECONDS = 0.35
 MAX_RETRIES = 3
@@ -42,39 +34,26 @@ POOL_LABELS = {
 
 @dataclass(frozen=True)
 class PoolRule:
-    hard_pity: int
-    featured_rate: float | None
     tracks_guarantee: bool
 
 
 POOL_RULES = {
     "character_event": PoolRule(
-        hard_pity=CHARACTER_HARD_PITY,
-        featured_rate=CHARACTER_FEATURED_RATE,
         tracks_guarantee=True,
     ),
     "lightcone_event": PoolRule(
-        hard_pity=LIGHTCONE_HARD_PITY,
-        featured_rate=LIGHTCONE_FEATURED_RATE,
         tracks_guarantee=True,
     ),
     "standard": PoolRule(
-        hard_pity=STANDARD_HARD_PITY,
-        featured_rate=None,
         tracks_guarantee=False,
     ),
     "beginner": PoolRule(
-        hard_pity=BEGINNER_HARD_PITY,
-        featured_rate=None,
         tracks_guarantee=False,
     ),
     "unknown": PoolRule(
-        hard_pity=STANDARD_HARD_PITY,
-        featured_rate=None,
         tracks_guarantee=False,
     ),
 }
 
 
 SUPPORTED_GACHA_TYPES = tuple(GACHA_TYPE_TO_POOL)
-

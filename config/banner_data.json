@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "notes": "Baseline permanent five-star pool. Add future entries or gacha_id metadata here without changing the pity engine.",
+  "standard_characters": [
+    "常驻五星角色（模拟）",
+    "姬子",
+    "瓦尔特",
+    "布洛妮娅",
+    "杰帕德",
+    "克拉拉",
+    "彦卿",
+    "白露",
+    "Himeko",
+    "Welt",
+    "Bronya",
+    "Gepard",
+    "Clara",
+    "Yanqing",
+    "Bailu"
+  ],
+  "character_event_additional_off_banner_characters": [
+    "银狼",
+    "希儿",
+    "符玄",
+    "云璃",
+    "刃",
+    "银枝",
+    "銀狼",
+    "希兒",
+    "雲璃",
+    "銀枝",
+    "Silver Wolf",
+    "Seele",
+    "Fu Xuan",
+    "Yunli",
+    "Blade",
+    "Argenti"
+  ],
+  "standard_lightcones": [
+    "常驻五星光锥（模拟）",
+    "银河铁道之夜",
+    "无可取代的东西",
+    "但战斗还未结束",
+    "以世界之名",
+    "制胜的瞬间",
+    "如泥酣眠",
+    "时节不居",
+    "Night on the Milky Way",
+    "Something Irreplaceable",
+    "But the Battle Isn't Over",
+    "In the Name of the World",
+    "Moment of Victory",
+    "Sleep Like the Dead",
+    "Time Waits for No One"
+  ],
+  "featured_by_gacha_id": {
+    "sample_character_banner": ["阮·梅", "飞霄"],
+    "sample_lightcone_banner": ["镜中故我", "我将，巡征追猎"]
+  }
+}
